@@ -62,8 +62,17 @@ export default function RetrieveLinks() {
           actions={
             <ActionPanel>
               <Action title="Copy Link" onAction={() => handleCopyLink(link.short_code)} />
-              <Action title="Delete Link" onAction={() => handleDeleteLink(link.short_code)} destructive={true} />
+              <Action
+                title="Delete Link"
+                shortcut={{ modifiers: ["cmd"], key: "d" }}
+                onAction={() => handleDeleteLink(link.short_code)}
+              />
               <Action title="Modify Link" onAction={() => handleModifyLink(link)} />
+              <Action.OpenInBrowser
+                title="Open in Browser"
+                shortcut={{ modifiers: ["cmd"], key: "o" }}
+                url={`${preferences.API_BASE_URL}/public/${link.short_code}`}
+              />
             </ActionPanel>
           }
         />
