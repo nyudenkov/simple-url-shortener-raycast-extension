@@ -1,0 +1,60 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "url-shortener",
+  "title": "url-shortener",
+  "description": "",
+  "icon": "command-icon.png",
+  "author": "nyudenkov",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "shorten-link",
+      "title": "Shorten Link",
+      "description": "",
+      "mode": "view"
+    },
+    {
+      "name": "retrieve-links",
+      "title": "Retrieve Links",
+      "description": "",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "API_BASE_URL",
+      "title": "API Base URL",
+      "type": "textfield",
+      "description": "The API base url.",
+      "required": true
+    },
+    {
+      "name": "API_TOKEN",
+      "title": "API Token",
+      "type": "textfield",
+      "description": "The API token used for authentication with the link shortening service.",
+      "required": true
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.68.1",
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.6",
+    "@types/node": "20.8.10",
+    "@types/react": "18.2.27",
+    "eslint": "^8.51.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish",
+    "fmt": "prettier --write \"src/**/*.tsx\""
+  }
+}
